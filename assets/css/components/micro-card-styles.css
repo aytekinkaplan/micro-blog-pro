@@ -1,34 +1,30 @@
 /* Micro Card Styles */
 .micro-card {
     background-color: var(--color-base);
-    padding: var(--margin);
+    padding: calc(var(--margin) / 2);
     margin-bottom: calc(var(--margin) / 2);
     border: 1px solid var(--color-border);
     border-radius: var(--radius);
     color: var(--color-bg);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
 
 .micro-card-image {
-    max-width: 100%;
+    max-width: 80%; /* Daha küçük ve minimal görünüm */
     border-radius: calc(var(--radius) / 2);
     margin-bottom: calc(var(--margin) / 4);
 }
 
 .micro-card-title {
-    font-size: 1.125rem; /* 18px */
+    font-size: 1rem; /* Daha küçük başlık */
     margin-bottom: calc(var(--margin) / 4);
 }
 
 .micro-card-content {
-    font-size: 0.875rem; /* 14px */
-    line-height: 1.5;
-}
-
-/* Regular Card Styles */
-.gh-card {
-    background-color: var(--color-border);
-    padding: var(--margin);
-    margin-bottom: var(--margin);
-    border-radius: var(--radius);
-    border: 1px solid var(--color-border);
+    font-size: 0.875rem;
+    line-height: 1.4;
 }
