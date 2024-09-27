@@ -14,17 +14,23 @@
 }
 
 .micro-card-image {
-    max-width: 80%; /* Daha küçük ve minimal görünüm */
+    max-width: 80%;
     border-radius: calc(var(--radius) / 2);
     margin-bottom: calc(var(--margin) / 4);
 }
 
 .micro-card-title {
-    font-size: 1rem; /* Daha küçük başlık */
+    font-size: 1rem;
     margin-bottom: calc(var(--margin) / 4);
 }
 
 .micro-card-content {
     font-size: 0.875rem;
     line-height: 1.4;
+}
+
+.micro-heading {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: var(--margin);
 }
