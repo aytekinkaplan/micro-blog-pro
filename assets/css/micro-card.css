@@ -1,0 +1,55 @@
+/* Micro Card Styling */
+.gh-micro-card {
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    background: #f9f9f9;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.gh-micro-card-image img {
+    max-width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.gh-micro-card-title {
+    font-size: 1.4rem;
+    margin: 0 0 0.5rem;
+    font-weight: bold;
+}
+
+.gh-micro-card-content {
+    font-size: 1.4rem;
+    line-height: 1.6em;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.gh-micro-card-meta {
+    font-size: 0.9rem;
+    opacity: 0.8;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.gh-micro-card-tag {
+    background-color: #eee;
+    padding: 2px 6px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    text-decoration: none;
+    color: #555;
+    margin-bottom: 0.5rem;
+}
+
+.gh-micro-card-link {
+    margin-left: auto;
+    text-decoration: none;
+    font-weight: bold;
+    color: #007acc;
+}

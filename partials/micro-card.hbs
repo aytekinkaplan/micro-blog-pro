@@ -1,0 +1,31 @@
+<article class="gh-micro-card">
+    {{#if feature_image}}
+        <div class="gh-micro-card-image">
+            <img src="{{feature_image}}" alt="Micro Image" loading="lazy" />
+        </div>
+    {{/if}}
+
+    <div class="gh-micro-card-content">
+        {{#if title}}
+            <h2 class="gh-micro-card-title">{{title}}</h2>
+        {{/if}}
+
+        <div class="gh-micro-card-excerpt">
+            {{content}}
+        </div>
+
+        {{#if primary_tag}}
+            <a
+                href="{{primary_tag.url}}"
+                class="gh-micro-card-tag"
+            >{{primary_tag.name}}</a>
+        {{/if}}
+    </div>
+
+    <div class="gh-micro-card-meta">
+        <time datetime="{{date format="YYYY-MM-DD"}}">{{date
+                format="DD MMMM YYYY"
+            }}</time>
+        <a href="{{url}}" class="gh-micro-card-link">Devamını Oku</a>
+    </div>
+</article>
