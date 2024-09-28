@@ -135,6 +135,18 @@ html,
     line-height: 1.4em;
     opacity: 0.5;
 }
+/* micro-card link styling */
+.gh-micro-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.gh-micro-card-link:hover .gh-micro-card {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
 
 @media (max-width: 700px) {
     .gh-page-head > p {

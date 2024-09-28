@@ -1,0 +1,19 @@
+.gh-micro-card-author {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.gh-micro-card-author-image,
+.gh-avatar-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #e1e1e1;
+}
+
+.gh-avatar-icon {
+    display: block;
+    fill: #fff; /* SVG'nin iç rengi */
+}

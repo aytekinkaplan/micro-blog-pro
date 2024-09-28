@@ -1,5 +1,19 @@
 <a href="{{url}}" class="gh-micro-card-link">
     <article class="gh-micro-card">
+        <header class="gh-micro-card-header">
+            <div class="gh-micro-card-author">
+                {{#if primary_author.profile_image}}
+                    <img src="{{primary_author.profile_image}}" alt="{{primary_author.name}}" class="gh-micro-card-author-image" />
+                {{else}}
+                    {{> "icons/avatar"}} <!-- Varsayılan avatar SVG'yi buraya ekliyoruz -->
+                {{/if}}
+                <div class="gh-micro-card-author-info">
+                    <span class="gh-micro-card-author-name">{{primary_author.name}}</span>
+                    <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
+                </div>
+            </div>
+        </header>
+        
         {{#if feature_image}}
             <div class="gh-micro-card-image">
                 <img src="{{feature_image}}" alt="Micro Image" loading="lazy" />
@@ -11,18 +25,14 @@
                 <h2 class="gh-micro-card-title">{{title}}</h2>
             {{else}}
                 <p class="gh-micro-card-text">{{content words="20"}}</p>
-                <!-- Başlıksız gönderiler için ilk 20 kelime -->
             {{/if}}
         </div>
 
-        <div class="gh-micro-card-meta">
+        <footer class="gh-micro-card-footer">
             {{#if primary_tag}}
                 <span class="gh-micro-card-tag">#{{primary_tag.name}}</span>
             {{/if}}
-
-            <time datetime="{{date format="YYYY-MM-DD"}}">{{date
-                    format="DD MMMM YYYY"
-                }}</time>
-        </div>
+            <span class="gh-micro-card-link-text">Full article</span>
+        </footer>
     </article>
 </a>
