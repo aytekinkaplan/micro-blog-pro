@@ -1,33 +1,28 @@
-<article class="gh-micro-card">
-    {{#if feature_image}}
-        <div class="gh-micro-card-image">
-            <img src="{{feature_image}}" alt="Micro Image" loading="lazy" />
+<a href="{{url}}" class="gh-micro-card-link">
+    <article class="gh-micro-card">
+        {{#if feature_image}}
+            <div class="gh-micro-card-image">
+                <img src="{{feature_image}}" alt="Micro Image" loading="lazy" />
+            </div>
+        {{/if}}
+
+        <div class="gh-micro-card-content">
+            {{#if title}}
+                <h2 class="gh-micro-card-title">{{title}}</h2>
+            {{else}}
+                <p class="gh-micro-card-text">{{content words="20"}}</p>
+                <!-- Başlıksız gönderiler için ilk 20 kelime -->
+            {{/if}}
         </div>
-    {{/if}}
 
-    <div class="gh-micro-card-content">
-        {{#if title}}
-            <h2 class="gh-micro-card-title">{{title}}</h2>
-        {{else}}
-            <p class="gh-micro-card-text">{{content words="20"}}</p>
-            <!-- Başlıksız gönderiler için ilk 20 kelime -->
-        {{/if}}
-    </div>
+        <div class="gh-micro-card-meta">
+            {{#if primary_tag}}
+                <span class="gh-micro-card-tag">#{{primary_tag.name}}</span>
+            {{/if}}
 
-    <div class="gh-micro-card-meta">
-        {{#if primary_tag}}
-            <a
-                href="{{primary_tag.url}}"
-                class="gh-micro-card-tag"
-            >#{{primary_tag.name}}</a>
-        {{/if}}
-
-        <time datetime="{{date format="YYYY-MM-DD"}}">{{date
-                format="DD MMMM YYYY"
-            }}</time>
-
-        {{#if title}}
-            <a href="{{url}}" class="gh-micro-card-link">Devamını Oku</a>
-        {{/if}}
-    </div>
-</article>
+            <time datetime="{{date format="YYYY-MM-DD"}}">{{date
+                    format="DD MMMM YYYY"
+                }}</time>
+        </div>
+    </article>
+</a>

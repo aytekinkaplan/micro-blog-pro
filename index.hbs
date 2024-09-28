@@ -3,13 +3,17 @@
     <div class="gh-container">
 
         <div class="gh-postfeed">
-            {{#foreach posts}}
-                {{#has tag="#micro"}}
-                    {{> "micro-card" page=../pagination.page }} {{!-- partials/micro-card.hbs --}}
-                {{else}}
-                    {{> "card" page=../pagination.page }} {{!-- partials/card.hbs --}}
-                {{/has}}
-            {{/foreach}}
+            <ul class="gh-micro-list">
+                {{#foreach posts}}
+                    {{#has tag="#micro"}}
+                        <li>
+                            {{> "micro-card" page=../pagination.page }} {{!-- partials/micro-card.hbs --}}
+                        </li>
+                    {{else}}
+                        {{> "card" page=../pagination.page }} {{!-- partials/card.hbs --}}
+                    {{/has}}
+                {{/foreach}}
+            </ul>
         </div>
 
         {{!-- If JS isn't enabled, fallback to standard pagination --}}

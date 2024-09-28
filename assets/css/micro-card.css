@@ -1,7 +1,17 @@
+/* Micro Card List Styling */
+.gh-micro-list {
+    list-style: none; /* Liste işaretlerini kaldır */
+    padding: 0;
+    margin: 0;
+}
+
+.gh-micro-list li {
+    margin-bottom: 1rem;
+}
+
 /* Micro Card Styling */
 .gh-micro-card {
     padding: 1rem 1.5rem;
-    margin-bottom: 1rem;
     border: 1px solid #e6ecf0;
     border-radius: 15px;
     background: #ffffff;
@@ -9,6 +19,18 @@
     flex-direction: column;
     gap: 0.5rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.gh-micro-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.gh-micro-card-link:hover .gh-micro-card {
+    background-color: #f5f8fa;
+    transform: translateY(-2px); /* Hover'da hafif yukarı kaldırma efekti */
 }
 
 .gh-micro-card-image img {
@@ -51,10 +73,8 @@
     margin-right: 0.5rem;
 }
 
-.gh-micro-card-link {
-    text-decoration: none;
-    font-weight: bold;
-    color: #1da1f2;
+.gh-micro-card-link:hover .gh-micro-card-tag {
+    background-color: #d4ebfa; /* Hover sırasında etiket rengini değiştir */
 }
 
 time {
