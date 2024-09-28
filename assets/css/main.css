@@ -1,15 +1,29 @@
+/* Main Styles - Your styles below
+/* ---------------------------------------------------------- */
 html,
 .gh-viewport {
     display: flex;
+    width: 70%; /* Sayfanın genişliğini belirler */
     flex-direction: column;
     min-height: 100vh;
     background: #ffffff;
+}
+
+.gh-viewport {
+    align-items: center; /* İçerikleri yatayda ortalar */
+    margin: 0 auto; /* Sayfayı ortalar */
+    width: 100%; /* Ebeveyn eleman içinde tamamen kapsar */
+    max-width: 1200px; /* Maksimum genişlik belirleyerek ortalanmayı sağlar */
 }
 
 .gh-main {
     flex: 1 0 auto;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 4rem 2rem;
+    width: 100%;
 }
 
 .gh-page {
@@ -33,8 +47,9 @@ html,
 
 .gh-container {
     width: 100%;
-    max-width: 1200px;
+    max-width: 900px; /* Genişliği artırıldı */
     margin: 0 auto;
+    padding: 0 2rem;
 }
 
 .gh-head-actions a:not(.gh-button) {
@@ -60,10 +75,6 @@ html,
 /* Index
 /* ---------------------------------------------------------- */
 
-/* .gh-card:not(:first-child) {
-    margin: 8vmin auto 0;
-} */
-
 .gh-card-link {
     display: flex;
     flex-direction: column;
@@ -71,7 +82,6 @@ html,
 
 .gh-card-image {
     width: 100%;
-    /* max-height: 700px; */
     object-fit: cover;
     margin-bottom: 4vmin;
     aspect-ratio: 1 / 1;
@@ -143,36 +153,106 @@ html,
 /* ---------------------------------------------------------- */
 
 .gh-header {
-    padding: 0 0 8vmin 0;
+    padding: 4rem 0;
     text-align: center;
 }
 
 .gh-post-meta {
     display: block;
-    margin: 0 0 1rem;
-    font-size: 1.4rem;
-    letter-spacing: 0.5px;
+    margin-bottom: 1rem;
+    font-size: 1rem;
+    color: #888; /* Meta bilgileri için daha yumuşak bir renk */
+    letter-spacing: 0.05em;
     text-transform: uppercase;
     opacity: 0.8;
 }
 
+.gh-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0.5rem 0;
+    line-height: 1.2;
+}
+
 .gh-excerpt {
     margin: 1rem 0 0 0;
+    font-size: 1.2rem;
+    color: #555;
+    text-align: center;
 }
 
 .gh-feature-image {
     grid-column: wide-start / wide-end;
     width: 100%;
-    margin: 8vmin 0 0;
+    margin: 2rem auto;
+    text-align: center;
+    max-width: 800px; /* Genişlik kısıtlaması */
+    border-radius: 10px;
+    overflow: hidden;
 }
 
 .gh-feature-image img {
     margin-inline: auto;
     width: 100%;
+    border-radius: 10px;
+}
+
+.gh-content {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    line-height: 1.7;
+    font-size: 1.1rem;
+    color: #444;
 }
 
 .gh-post-footer {
     margin: 2rem 0;
+}
+
+.gh-footer {
+    padding: 2rem 0;
+    border-top: 1px solid #e1e1e1;
+    margin-top: 4rem;
+    text-align: center;
+}
+
+.gh-post-authors {
+    font-size: 1rem;
+    color: #777;
+}
+
+.gh-post-authors a {
+    color: #007acc;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.gh-post-authors a:hover {
+    text-decoration: underline;
+}
+
+/* Read More (Next/Previous Post) Section */
+.gh-readmore {
+    margin-top: 4rem;
+    padding: 2rem 0;
+    background-color: #f9f9f9;
+    border-top: 1px solid #e1e1e1;
+    display: flex;
+    justify-content: space-between;
+}
+
+.gh-readmore a {
+    color: #007acc;
+    text-decoration: none;
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+}
+
+.gh-readmore a:hover {
+    text-decoration: underline;
 }
 
 /* Author Archive
