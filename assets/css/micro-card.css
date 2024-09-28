@@ -1,8 +1,11 @@
 /* Micro Card List Styling */
 .gh-micro-list {
+    width: 570.5px; /* Listenin genişliği */
+    margin: 0 auto; /* Sayfanın ortasına yerleştirir */
+    display: grid;
+    grid-template-columns: 1fr;
     list-style: none;
     padding: 0;
-    margin: 0;
 }
 
 .gh-micro-list li {
