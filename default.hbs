@@ -16,7 +16,7 @@
             {{#is "index"}}
                 <nav class="gh-head-inner gh-container">
                     <div class="gh-head-actions">
-                        <div class="gh-head-actions-list">
+                        <div class="gh-head-actions-list gh-head-icons" style="margin-left:auto;">
                             <!-- Navbar'da sadece RSS ikonları ve Dark Mode toggle -->
                             <a href="/rss/" aria-label="RSS" class="gh-icon">
                                 {{> "icons/rss"}}
@@ -25,7 +25,7 @@
                             <button
                                 id="dark-mode-toggle"
                                 aria-label="Toggle dark mode"
-                                style="font-size: 1.5rem; cursor: pointer; background: none; border: none;"
+                                style="font-size: 2rem; cursor: pointer; background: none; border: none; padding: 5px;"
                             >
                                 🌙
                             </button>
@@ -59,8 +59,8 @@
                         <div class="gh-head-menu">
                             {{navigation}}
                         </div>
-                        <div class="gh-head-actions">
-                            <div class="gh-head-actions-list">
+                        <div class="gh-head-actions gh-head-icons">
+                            <div class="gh-head-actions-list" style="margin-left: auto;">
                                 {{search}}
                                 {{#if @site.members_enabled}}
                                     {{#if @member}}
@@ -79,7 +79,7 @@
                                 <button
                                     id="dark-mode-toggle"
                                     aria-label="Toggle dark mode"
-                                    style="font-size: 1.5rem; cursor: pointer; background: none; border: none;"
+                                    style="font-size: 2rem; cursor: pointer; background: none; border: none; padding: 5px;"
                                 >
                                     🌙
                                 </button>

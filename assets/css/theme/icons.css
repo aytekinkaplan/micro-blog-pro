@@ -46,3 +46,35 @@
 .gh-head-icons a:hover svg {
     fill: #007acc; /* Hover'da ikon rengi */
 }
+/* İkonlar için CSS */
+.gh-head-icons {
+    display: flex;
+    gap: 12px; /* İkonlar arasındaki boşluğu ayarladım */
+    margin-left: auto; /* Sağ tarafa yerleştirir */
+    align-items: center;
+}
+
+.gh-head-icons a {
+    display: inline-flex;
+    padding: 6px; /* Paddingi artırarak ikonların daha belirgin görünmesini sağladım */
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+.gh-head-icons a:hover {
+    background-color: #e9ecef; /* Hover sırasında ikon arka plan rengi */
+}
+.gh-head-icons svg {
+    width: 28px; /* İkonların boyutunu artırdım */
+    height: 28px;
+    fill: #007acc; /* SVG'nin iç rengi */
+    transition: fill 0.3s ease;
+}
+
+.gh-head-icons a:hover svg {
+    fill: #e848e0; /* Hover'da ikon rengi */
+}
+
+.rss-icon {
+    width: 30px;
+    height: 30px;
+}

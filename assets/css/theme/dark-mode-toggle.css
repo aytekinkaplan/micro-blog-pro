@@ -104,3 +104,45 @@ html.dark-mode .dark-mode-toggle:hover {
     transform: scale(1.2);
     color: #ffffff;
 }
+
+/* Dark Mode için Readmore Alanı */
+html.dark-mode .gh-readmore {
+    background-color: #16191d; /* Karanlık modda Readmore alanı arka planı */
+    color: #e0e0e0; /* Metin rengi */
+    border: 1px solid #333; /* Kenarlık rengi */
+}
+
+html.dark-mode .gh-readmore a {
+    color: #bb86fc; /* Readmore linklerin rengi */
+}
+
+html.dark-mode .gh-readmore h4 {
+    color: #ffffff; /* Readmore başlıklarının rengi */
+}
+
+html.dark-mode .gh-readmore svg {
+    fill: #bb86fc; /* Readmore ikonlarının rengi */
+}
+
+html.dark-mode .gh-readmore-inner {
+    background-color: #16191d; /* Readmore iç kısmı */
+    border: 1px solid #16191d; /* Readmore iç kısmı kenarlığı */
+}
+/* Dark Mode için Paragraf Renkleri */
+html.dark-mode p {
+    color: #d1d1d1; /* Paragraf metin rengini daha açık bir gri ton yaparak okunabilirliği artırdım */
+    line-height: 1.7; /* Satır yüksekliğini artırarak metnin daha rahat okunmasını sağladım */
+}
+html.dark-mode li {
+    color: #646363; /* Paragraf metin rengini daha açık bir gri ton yaparak okunabilirliği artırdım */
+    line-height: 1.7; /* Satır yüksekliğini artırarak metnin daha rahat okunmasını sağladım */
+}
+
+html.dark-mode p a {
+    color: #bb86fc; /* Linklerin rengi */
+    text-decoration: underline; /* Linklerin altını çizerek vurguladım */
+}
+
+html.dark-mode p a:hover {
+    color: #ffcc00; /* Hover sırasında bağlantı rengini değiştirerek daha belirgin hale getirdim */
+}

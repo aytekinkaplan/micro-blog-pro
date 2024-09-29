@@ -2,22 +2,22 @@
 /* ---------------------------------------------------------- */
 
 .gh-readmore {
-    padding: 6vmin 3vmin; /* Daha kompakt padding */
-    font-size: 2.4rem; /* Yazı boyutunu biraz küçülttüm */
-    background-color: #f5f5f5; /* Hafif bir gri ton */
-    border-radius: 10px; /* Köşeleri yuvarlatılmış görünüm */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif bir gölge efekti */
+    padding: 8vmin 4vmin; /* Padding'i biraz artırdım */
+    font-size: 2.6rem; /* Yazı boyutunu büyüttüm */
+    background-color: #1c1c1e; /* Daha koyu bir gri ton (karanlık mod ile uyumlu) */
+    border-radius: 12px; /* Köşeleri daha yuvarlak yaptım */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Gölgeyi belirginleştirdim */
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .gh-readmore:hover {
-    background-color: #e1e1e1; /* Hover sırasında arka plan rengini değiştir */
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Hover sırasında gölgeyi artır */
+    background-color: #2c2c2e; /* Hover sırasında arka plan rengini koyulaştırdım */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5); /* Hover sırasında gölgeyi artırdım */
 }
 
 .gh-readmore-inner {
     display: grid;
-    grid-gap: 6vmin; /* Boşluğu biraz azalttım */
+    grid-gap: 6vmin; /* Boşluğu artırdım */
     grid-template-columns: 1fr 1fr;
     align-items: center; /* İçeriklerin hizalanmasını ortaladım */
 }
@@ -29,14 +29,14 @@
 
 .gh-readmore a {
     display: flex;
-    color: currentColor;
+    color: #bb86fc; /* Daha belirgin bir bağlantı rengi */
     text-decoration: none;
     align-items: center; /* Yazı ve simgelerin hizalanmasını ortaladım */
     transition: color 0.3s ease;
 }
 
 .gh-readmore a:hover {
-    color: #007acc; /* Hover sırasında bağlantı rengini değiştir */
+    color: #ffcc00; /* Hover sırasında bağlantı rengini değiştir */
 }
 
 .gh-readmore h4 {
@@ -45,37 +45,40 @@
     font-family: "Open Sans", sans-serif; /* Daha modern bir font */
     font-weight: 600; /* Başlıkları vurgulamak için biraz kalınlaştırdım */
     margin: 0; /* Fazladan boşlukları kaldırdım */
+    color: #ffffff; /* Metin rengini beyaz yaparak okunabilirliği artırdım */
 }
 
 .gh-readmore svg {
     display: inline-block;
     vertical-align: middle;
-    height: 1.2em; /* İkon boyutunu biraz artırdım */
-    margin: 0.1em 0 0;
+    height: 1.5em; /* İkon boyutunu büyüttüm */
+    margin: 0.2em 0 0;
     fill: currentColor; /* İkonların renginin metinle uyumlu olmasını sağladım */
     transition: transform 0.2s ease; /* Hover sırasında hafif bir animasyon ekledim */
 }
 
 .gh-readmore a:hover svg {
-    transform: translateX(3px); /* Hover sırasında ikonun hafif sağa kayması */
+    transform: translateX(
+        4px
+    ); /* Hover sırasında ikonun daha belirgin bir şekilde sağa kayması */
 }
 
 .gh-readmore svg + h4,
 .gh-readmore h4 + svg {
-    margin-left: 1.5vmin; /* Aradaki boşluğu biraz azalttım */
+    margin-left: 2vmin; /* Aradaki boşluğu biraz artırdım */
 }
 
 @media (max-width: 700px) {
     .gh-readmore {
-        font-size: 1.6rem;
-        padding: 4vmin 2vmin; /* Mobilde padding'i biraz azalttım */
+        font-size: 1.8rem; /* Mobilde yazı boyutunu biraz büyüttüm */
+        padding: 6vmin 3vmin; /* Mobilde padding'i biraz artırdım */
     }
     .gh-readmore-inner {
         grid-template-columns: 1fr; /* Mobilde tek sütun görünüm */
         grid-gap: 4vmin;
     }
     .gh-readmore svg {
-        margin: 0.05em 0 0;
-        height: 1em; /* Mobilde ikon boyutunu küçülttüm */
+        margin: 0.1em 0 0;
+        height: 1.3em; /* Mobilde ikon boyutunu belirginleştirdim */
     }
 }

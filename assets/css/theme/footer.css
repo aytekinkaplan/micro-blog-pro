@@ -7,7 +7,7 @@
     align-items: center;
     justify-content: center;
     padding: 8vmin 4vmin 4vmin;
-    background-color: #e9ecef; /* Daha açık bir arka plan rengi */
+    background-color: #e9ecef; /* Daha açık ve sayfaya uyumlu bir arka plan rengi */
 }
 
 .gh-foot .gh-container {
@@ -55,30 +55,37 @@
 /* İkonlar için özel stil */
 .gh-foot-icons {
     display: flex;
-    gap: 1.5rem; /* İkonlar arasındaki boşluğu ayarlayın */
-    margin: 1rem 0;
+    gap: 2rem; /* İkonlar arasındaki boşluğu biraz artırın */
+    margin: 1.5rem 0;
 }
 
 .gh-foot-icons a {
     display: inline-flex;
-    width: 40px; /* İkon boyutunu ayarlayın */
-    height: 40px;
+    width: 48px; /* İkon boyutunu biraz artırın */
+    height: 48px;
     align-items: center;
     justify-content: center;
-    background-color: #444; /* İkonların arka plan rengini ayarlayın */
+    background-color: #007acc; /* Sayfaya uyumlu daha belirgin bir arka plan rengi */
     border-radius: 50%; /* İkonları daire şeklinde yapın */
-    transition: background-color 0.3s, transform 0.2s;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Hafif bir gölge efekti */
 }
 
 .gh-foot-icons a:hover {
-    background-color: #6d6d6d; /* Hover rengini değiştirin */
-    transform: scale(1.1); /* Hover sırasında biraz büyütün */
+    background-color: #005fa3; /* Hover sırasında belirgin bir renk değişikliği */
+    transform: scale(1.15); /* Hover sırasında biraz daha büyütün */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Hover sırasında gölgeyi artırın */
 }
 
 .gh-foot-icons svg {
     width: 24px; /* SVG ikonlarının boyutunu ayarlayın */
     height: 24px;
-    fill: #fff; /* SVG içindeki ikon rengini beyaz yapın */
+    fill: #ffffff; /* SVG içindeki ikon rengini beyaz yapın */
+    transition: fill 0.3s;
+}
+
+.gh-foot-icons a:hover svg {
+    fill: #f0f0f0; /* Hover sırasında ikon rengini hafif değiştirin */
 }
 
 @media (max-width: 700px) {
@@ -86,14 +93,14 @@
         font-size: 1.6rem;
     }
     .gh-foot-icons {
-        gap: 1rem; /* Mobilde ikonlar arasındaki boşluğu küçültün */
+        gap: 1.2rem; /* Mobilde ikonlar arasındaki boşluğu ayarlayın */
     }
     .gh-foot-icons a {
-        width: 35px;
-        height: 35px;
+        width: 40px;
+        height: 40px;
     }
     .gh-foot-icons svg {
-        width: 20px;
-        height: 20px;
+        width: 22px;
+        height: 22px;
     }
 }
