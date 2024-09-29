@@ -1,19 +1,21 @@
 <article class="PostItem blogpost h-entry gh-micro-card" data-index="{{@index}}" data-slug="{{slug}}" tabindex="0" data-tags="{{primary_tag.slug}}">
-    <!-- Ana linkin kaldırıldığı ve her öğenin tıklanabilir hale getirildiği versiyon -->
+    <!-- Profil Görseli -->
+    {{#if primary_author.profile_image}}
+        <img src="{{primary_author.profile_image}}" alt="{{primary_author.name}}" class="Pic Persona gh-micro-card-author-image" loading="lazy" decoding="async" />
+    {{else}}
+        {{> "icons/avatar"}} <!-- Varsayılan avatar SVG'sini buraya ekliyoruz -->
+    {{/if}}
+
+    <!-- Başlık Bilgisi -->
     <header class="inline-wrap gh-micro-card-header">
         <a href="{{primary_author.url}}" class="gh-micro-card-author-link truncate">
-            {{#if primary_author.profile_image}}
-                <img src="{{primary_author.profile_image}}" alt="{{primary_author.name}}" class="gh-micro-card-author-image" loading="lazy" decoding="async" />
-            {{else}}
-                {{> "icons/avatar"}} <!-- Varsayılan avatar SVG'sini buraya ekliyoruz -->
-            {{/if}}
             <span class="username p-author">{{primary_author.name}}</span>
             <span>@{{primary_author.slug}}</span>
         </a>
         <time class="dt-published" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
     </header>
 
-    <!-- Etiketleri Göster -->
+    <!-- Etiketler -->
     {{#if primary_tag}}
         <div class="Tags inline-wrap">
             <a href="/tag/{{primary_tag.slug}}" class="Tag" data-topic="{{primary_tag.slug}}">#{{primary_tag.name}}</a>
@@ -24,23 +26,22 @@
     <h2 class="p-name gh-micro-card-title">
         <a href="{{url}}">{{title}}</a>
     </h2>
-      <!-- Gönderinin İçeriği -->
-    <p class="p-summary gh-micro-card-excerpt">
-        {{#if custom_excerpt}}
-            {{custom_excerpt}}
-        {{else}}
-            {{content words="30"}} <!-- 30 kelimelik excerpt (özet) gösterilecek -->
-        {{/if}}
-    </p>
 
-    <!-- Öne Çıkan Görsel Varsa Göster -->
+    <!-- Gönderinin İçeriği -->
+    <section class="e-content">
+        {{#if custom_excerpt}}
+            <p>{{custom_excerpt}}</p>
+        {{else}}
+            <p>{{content words="30"}}</p> <!-- 30 kelimelik excerpt (özet) gösterilecek -->
+        {{/if}}
+    </section>
+
+    <!-- Ana Görsel Varsa Göster -->
     {{#if feature_image}}
         <figure class="gh-micro-card-image">
             <img loading="lazy" src="{{feature_image}}" alt="Micro Image" class="Pic" decoding="async" />
         </figure>
     {{/if}}
-
-  
 
     <!-- Footer Bilgisi -->
     <footer class="gh-micro-card-footer">
@@ -51,7 +52,7 @@
         </a>
         <a href="#" class="icon-button like-button">
             <div class="sr-only">Like this post</div>
-            <svg aria-hidden="true" class="filled-icon" width="24" height="24"><use href="#icon.heart"></use></svg>
+            <svg aria-hidden="true" class="filled-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon.heart"></use></svg>
         </a>
     </footer>
 </article>
