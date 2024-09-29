@@ -146,3 +146,29 @@ html.dark-mode p a {
 html.dark-mode p a:hover {
     color: #ffcc00; /* Hover sırasında bağlantı rengini değiştirerek daha belirgin hale getirdim */
 }
+/* Dark Mode için İkonlar */
+html.dark-mode .gh-head-icons a {
+    background-color: #333; /* Dark modda ikon arka planı */
+}
+
+html.dark-mode .gh-head-icons a:hover {
+    background-color: #555; /* Dark modda hover arka planı */
+}
+
+html.dark-mode .gh-head-icons svg {
+    fill: #bb86fc; /* Dark modda ikon rengi */
+}
+
+html.dark-mode .dark-mode-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem; /* Boyutunu artırdım */
+    color: #bb86fc;
+    transition: transform 0.2s ease;
+}
+
+html.dark-mode .dark-mode-toggle:hover {
+    transform: scale(1.2);
+    color: #ffffff;
+}
