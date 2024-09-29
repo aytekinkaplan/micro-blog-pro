@@ -16,9 +16,12 @@ import atImport from "postcss-import";
 // Use the latest CSS features in your Rollup bundle
 import postcssPresetEnv from "postcss-preset-env";
 
-// Development: Enables a livereload server that watches for changes to CSS, JS, and Handlbars files
+// Development: Enables a livereload server that watches for changes to CSS, JS, and Handlebars files
 import { resolve } from "path";
 import livereload from "rollup-plugin-livereload";
+
+// Zip plugin to package the theme
+import zip from "rollup-plugin-zip";
 
 // Rollup configuration
 export default defineConfig({
@@ -45,5 +48,28 @@ export default defineConfig({
                 extraExts: ["hbs"],
                 exclusions: [resolve("node_modules")],
             }),
-    ],
+        // Zip plugin güncellemesi
+        zip({
+            file: "dist/theme.zip", // Yalnızca 'file' seçeneği kullanılacak
+            // Include all necessary theme files and folders for Ghost
+            sourceMaps: true,
+            input: [
+                "assets/built/**",
+                "partials/**",
+                "members/**",
+                "locales/**",
+                "package.json",
+                "default.hbs",
+                "index.hbs",
+                "post.hbs",
+                "tag.hbs",
+                "author.hbs",
+                "*.hbs",
+                "assets/fonts/**",
+                "assets/icons/**",
+                "assets/images/**",
+                "assets/css/**",
+            ],
+        }),
+    ].filter(Boolean), // .filter(Boolean) ensures falsy values are removed
 });
