@@ -24,6 +24,14 @@
     <h2 class="p-name gh-micro-card-title">
         <a href="{{url}}">{{title}}</a>
     </h2>
+      <!-- Gönderinin İçeriği -->
+    <p class="p-summary gh-micro-card-excerpt">
+        {{#if custom_excerpt}}
+            {{custom_excerpt}}
+        {{else}}
+            {{content words="30"}} <!-- 30 kelimelik excerpt (özet) gösterilecek -->
+        {{/if}}
+    </p>
 
     <!-- Öne Çıkan Görsel Varsa Göster -->
     {{#if feature_image}}
@@ -32,7 +40,7 @@
         </figure>
     {{/if}}
 
-   
+  
 
     <!-- Footer Bilgisi -->
     <footer class="gh-micro-card-footer">

@@ -1,6 +1,6 @@
 /* Micro Card List Styling */
 .gh-micro-list {
-    width: 600px; /* Listenin genişliği */
+    width: 650px; /* Liste genişliği */
     margin: 0 auto; /* Sayfanın ortasına yerleştirir */
     display: grid;
     grid-template-columns: 1fr;
@@ -13,22 +13,24 @@
 }
 
 .gh-micro-card {
-    padding: 1.5rem;
+    padding: 2rem;
     margin-bottom: 1.5rem;
     border: 1px solid #e6ecf0;
     border-radius: 15px;
     background: #ffffff;
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    gap: 0.8rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     max-width: 100%; /* Article genişliğini kontrol eder */
+    transition: all 0.3s ease;
 }
 
 .gh-micro-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    border-color: #007acc;
 }
 
 .gh-micro-card-header {
@@ -44,11 +46,16 @@
 }
 
 .gh-micro-card-author-image {
-    width: 50px;
-    height: 50px;
+    width: 48px;
+    height: 48px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid #e6ecf0;
+    transition: border-color 0.3s ease;
+}
+
+.gh-micro-card-author-image:hover {
+    border-color: #007acc;
 }
 
 .gh-micro-card-author-info {
@@ -71,13 +78,13 @@
     max-width: 100%; /* Image container genişliği */
     display: flex;
     justify-content: center;
+    overflow: hidden;
+    border-radius: 12px;
 }
 
 .gh-micro-card-image img {
-    max-width: 100%; /* Görsel genişliği */
+    width: 100%; /* Görsel genişliği */
     height: auto;
-    border-radius: 12px;
-    margin: 0.5rem 0;
     transition: transform 0.3s ease;
 }
 
@@ -86,11 +93,11 @@
 }
 
 .gh-micro-card-title {
-    font-size: 1.2rem;
-    margin: 0;
+    font-size: 1.4rem;
+    margin: 0.5rem 0;
     font-weight: bold;
     color: #14171a;
-    transition: color 0.2s;
+    transition: color 0.2s ease;
 }
 
 .gh-micro-card-title:hover {
@@ -101,9 +108,15 @@
     font-size: 1rem;
     margin: 0.5rem 0;
     color: #657786;
+    line-height: 1.5;
     white-space: normal;
     overflow: hidden;
     text-overflow: ellipsis;
+    transition: color 0.3s ease;
+}
+
+.gh-micro-card:hover .gh-micro-card-text {
+    color: #333; /* Hover sırasında yazı rengi değişir */
 }
 
 .gh-micro-card-footer {
@@ -116,12 +129,17 @@
 }
 
 .gh-micro-card-tag {
-    background-color: #e8f5fd;
-    padding: 2px 6px;
-    border-radius: 3px;
+    background-color: #f0f8ff;
+    padding: 3px 8px;
+    border-radius: 5px;
     font-size: 0.8rem;
     text-decoration: none;
-    color: #1da1f2;
+    color: #007acc;
+    transition: background-color 0.3s ease;
+}
+
+.gh-micro-card-tag:hover {
+    background-color: #e0f2ff;
 }
 
 .gh-micro-card-link {
@@ -132,6 +150,7 @@
 
 .gh-micro-card-link:hover {
     text-decoration: underline;
+    color: #007acc;
 }
 
 .icon-button {
@@ -139,9 +158,14 @@
     align-items: center;
     color: #1da1f2;
     margin-left: 10px;
-    transition: color 0.2s;
+    transition: color 0.3s ease;
 }
 
 .icon-button:hover {
     color: #007acc;
+}
+
+.icon-button svg {
+    height: 16px;
+    width: 16px;
 }
