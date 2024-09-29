@@ -7,7 +7,7 @@ html,
     align-items: center; /* Kapsayıcıyı dikeyde ortalar */
     flex-direction: column;
     min-height: 100vh;
-    background: #ffffff;
+    background: #e9ecef;
 }
 
 .gh-viewport {
