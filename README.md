@@ -59,15 +59,14 @@ Welcome to the GhostCMS Custom Theme Project! This project aims to create a resp
 
 The following Mermaid diagram illustrates the theme's architecture and interactions:
 
-<antArtifact identifier="theme-architecture-diagram" type="application/vnd.ant.mermaid" title="Theme Architecture Diagram">
-graph TD;
-    A[Header/Navbar] -->|Contains| B[Dark Mode Toggle];
-    A -->|Contains| C[RSS Icon];
-    B -->|Toggles| D[Dark Mode Styles];
-    C -->|Links to| E[RSS Feed];
-    D -->|Applies to| F[Content Area];
-    F -->|Contains| G[Micro Blog Cards];
-    F -->|Contains| H[Regular Blog Cards];
-    F -->|Adapts to| I[Footer with Social Icons];
-    I -->|Contains| J[Twitter Icon];
-    I -->|Contains| K[Facebook Icon];
+graph TD
+A[Header/Navbar] -->|Contains| B[Dark Mode Toggle]
+A -->|Contains| C[RSS Icon]
+B -->|Toggles| D[Dark Mode Styles]
+C -->|Links to| E[RSS Feed]
+D -->|Applies to| F[Content Area]
+F -->|Contains| G[Micro Blog Cards]
+F -->|Contains| H[Regular Blog Cards]
+F -->|Adapts to| I[Footer with Social Icons]
+I -->|Contains| J[Twitter Icon]
+I -->|Contains| K[Facebook Icon]
