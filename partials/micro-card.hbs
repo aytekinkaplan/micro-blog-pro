@@ -1,38 +1,50 @@
-<a href="{{url}}" class="gh-micro-card-link">
-    <article class="gh-micro-card">
-        <header class="gh-micro-card-header">
-            <div class="gh-micro-card-author">
-                {{#if primary_author.profile_image}}
-                    <img src="{{primary_author.profile_image}}" alt="{{primary_author.name}}" class="gh-micro-card-author-image" />
-                {{else}}
-                    {{> "icons/avatar"}} <!-- Varsayılan avatar SVG'yi buraya ekliyoruz -->
-                {{/if}}
-                <div class="gh-micro-card-author-info">
-                    <span class="gh-micro-card-author-name">{{primary_author.name}}</span>
-                    <time datetime="{{date format="YYYY-MM-DD"}}">{{date format="DD MMMM YYYY"}}</time>
-                </div>
-            </div>
-        </header>
-        
-        {{#if feature_image}}
-            <div class="gh-micro-card-image">
-                <img src="{{feature_image}}" alt="Micro Image" loading="lazy" />
-            </div>
-        {{/if}}
-
-        <div class="gh-micro-card-content">
-            {{#if title}}
-                <h2 class="gh-micro-card-title">{{title}}</h2>
+<article class="PostItem blogpost h-entry gh-micro-card" data-index="{{@index}}" data-slug="{{slug}}" tabindex="0" data-tags="{{primary_tag.slug}}">
+    <!-- Ana linkin kaldırıldığı ve her öğenin tıklanabilir hale getirildiği versiyon -->
+    <header class="inline-wrap gh-micro-card-header">
+        <a href="{{primary_author.url}}" class="gh-micro-card-author-link truncate">
+            {{#if primary_author.profile_image}}
+                <img src="{{primary_author.profile_image}}" alt="{{primary_author.name}}" class="gh-micro-card-author-image" loading="lazy" decoding="async" />
             {{else}}
-                <p class="gh-micro-card-text">{{content words="20"}}</p>
+                {{> "icons/avatar"}} <!-- Varsayılan avatar SVG'sini buraya ekliyoruz -->
             {{/if}}
-        </div>
+            <span class="username p-author">{{primary_author.name}}</span>
+            <span>@{{primary_author.slug}}</span>
+        </a>
+        <time class="dt-published" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+    </header>
 
-        <footer class="gh-micro-card-footer">
-            {{#if primary_tag}}
-                <span class="gh-micro-card-tag">#{{primary_tag.name}}</span>
-            {{/if}}
-            <span class="gh-micro-card-link-text">Full article</span>
-        </footer>
-    </article>
-</a>
+    <!-- Etiketleri Göster -->
+    {{#if primary_tag}}
+        <div class="Tags inline-wrap">
+            <a href="/tag/{{primary_tag.slug}}" class="Tag" data-topic="{{primary_tag.slug}}">#{{primary_tag.name}}</a>
+        </div>
+    {{/if}}
+
+    <!-- Post Başlığı -->
+    <h2 class="p-name gh-micro-card-title">
+        <a href="{{url}}">{{title}}</a>
+    </h2>
+ <!-- Gönderinin İçeriği -->
+    <p class="p-summary gh-micro-card-text">{{content words="20"}}</p>
+    <!-- Öne Çıkan Görsel Varsa Göster -->
+    {{#if feature_image}}
+        <figure class="gh-micro-card-image">
+            <img loading="lazy" src="{{feature_image}}" alt="Micro Image" class="Pic" decoding="async" />
+        </figure>
+    {{/if}}
+
+   
+
+    <!-- Footer Bilgisi -->
+    <footer class="gh-micro-card-footer">
+        <a href="{{url}}" class="u-url">Full article</a>
+        <a href="javascript: navigator.clipboard.writeText(window.location.href + '{{slug}}');Toast('Link <b>copied!</b>')" class="icon-button share-button">
+            <div class="sr-only">Share a direct link to this post</div>
+            <svg aria-hidden="true" class="filled-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon.share"></use></svg>
+        </a>
+        <a href="#" class="icon-button like-button">
+            <div class="sr-only">Like this post</div>
+            <svg aria-hidden="true" class="filled-icon" width="24" height="24"><use href="#icon.heart"></use></svg>
+        </a>
+    </footer>
+</article>

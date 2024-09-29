@@ -7,10 +7,12 @@
                 {{#foreach posts}}
                     {{#has tag="#micro"}}
                         <li>
-                            {{> "micro-card" page=../pagination.page }} {{!-- partials/micro-card.hbs --}}
+                            {{> "micro-card"}} <!-- Micro card içeriklerini gösterir -->
                         </li>
                     {{else}}
-                        {{> "card" page=../pagination.page }} {{!-- partials/card.hbs --}}
+                        <li>
+                            {{> "card"}} <!-- Normal card içeriklerini gösterir -->
+                        </li>
                     {{/has}}
                 {{/foreach}}
             </ul>

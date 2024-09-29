@@ -1,6 +1,13 @@
 @import "vars.css";
-@import "header.css";
-@import "footer.css";
 @import "main.css";
-@import "micro-card.css";
-@import "icons.css";
+@import "theme/micro-card.css";
+@import "theme/icons.css";
+@import "dark-mode-toggle.css";
+@import "global.css";
+@import "theme/badge.css";
+@import "theme/header.css";
+@import "theme/footer.css";
+@import "theme/comments.css";
+@import "theme/content.css";
+@import "theme/pagination.css";
+@import "theme/readmore.css";

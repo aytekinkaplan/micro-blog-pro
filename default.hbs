@@ -12,7 +12,6 @@
     </head>
     <body class="{{body_class}}">
         <div class="gh-viewport">
-
             {{! Header will be displayed only if it's not the index page }}
             {{#is "index"}}
                 {{! Header will be hidden on the index page }}
@@ -66,6 +65,20 @@
             {{/is}}
 
             <main class="gh-main">
+                <!-- Karanlık Mod Düğmesi Ana İçerikte Görünsün -->
+                <div
+                    class="dark-mode-toggle-wrapper"
+                    style="text-align: right; padding: 1rem;"
+                >
+                    <button
+                        id="dark-mode-toggle"
+                        aria-label="Toggle dark mode"
+                        style="font-size: 1.5rem; cursor: pointer; background: none; border: none;"
+                    >
+                        🌙
+                    </button>
+                </div>
+
                 {{{body}}}
                 {{! All content gets inserted here, index.hbs, post.hbs, etc }}
             </main>
@@ -85,11 +98,14 @@
                     </div>
                 </div>
             </footer>
-
         </div>
 
         {{! <foot> }}
         {{ghost_foot}}
         {{! Outputs important scripts - should always be included before closing body tag }}
+
+        <!-- Ayrı JavaScript dosyasını dahil et -->
+        <script src="{{asset 'js/dark-mode-toggle.js'}}"></script>
+
     </body>
 </html>

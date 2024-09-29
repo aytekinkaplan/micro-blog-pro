@@ -3,17 +3,18 @@
 html,
 .gh-viewport {
     display: flex;
-    width: 70%; /* Sayfanın genişliğini belirler */
+    justify-content: center; /* Kapsayıcıyı yatayda ortalar */
+    align-items: center; /* Kapsayıcıyı dikeyde ortalar */
     flex-direction: column;
     min-height: 100vh;
     background: #ffffff;
 }
 
 .gh-viewport {
-    align-items: center; /* İçerikleri yatayda ortalar */
     margin: 0 auto; /* Sayfayı ortalar */
-    width: 100%; /* Ebeveyn eleman içinde tamamen kapsar */
-    max-width: 1200px; /* Maksimum genişlik belirleyerek ortalanmayı sağlar */
+    width: 100%; /* Kapsayıcı genişliği */
+    max-width: 1200px; /* Maksimum genişlik */
+    padding: 2rem; /* Kenar boşlukları */
 }
 
 .gh-main {
@@ -21,9 +22,10 @@ html,
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
+    align-items: center; /* İçeriği yatayda ortalar */
     padding: 4rem 2rem;
     width: 100%;
+    max-width: 900px; /* Ana içerik genişliği */
 }
 
 .gh-page {
@@ -36,9 +38,10 @@ html,
 
 .gh-postfeed {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
+    grid-template-columns: 1fr; /* Tek kolon kullanarak ortalamayı sağlar */
     gap: 4.8vmin 4vmin;
     padding: 8vmin 0;
+    justify-content: center; /* Kartları ortalar */
 }
 
 .gh-postfeed > *:first-child {
