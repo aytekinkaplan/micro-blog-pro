@@ -3,9 +3,11 @@
 
 .gh-foot {
     display: flex;
+    flex-direction: column; /* Footer içeriğini dikey hizalayın */
     align-items: center;
     justify-content: center;
     padding: 8vmin 4vmin 4vmin;
+    background-color: #e9ecef; /* Daha açık bir arka plan rengi */
 }
 
 .gh-foot .gh-container {
@@ -44,14 +46,54 @@
 }
 
 .gh-foot-meta {
-    margin: 2rem 0;
+    margin: 1.5rem 0;
     font-size: 1.5rem;
     text-align: center;
     opacity: 0.75;
 }
 
+/* İkonlar için özel stil */
+.gh-foot-icons {
+    display: flex;
+    gap: 1.5rem; /* İkonlar arasındaki boşluğu ayarlayın */
+    margin: 1rem 0;
+}
+
+.gh-foot-icons a {
+    display: inline-flex;
+    width: 40px; /* İkon boyutunu ayarlayın */
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    background-color: #444; /* İkonların arka plan rengini ayarlayın */
+    border-radius: 50%; /* İkonları daire şeklinde yapın */
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.gh-foot-icons a:hover {
+    background-color: #6d6d6d; /* Hover rengini değiştirin */
+    transform: scale(1.1); /* Hover sırasında biraz büyütün */
+}
+
+.gh-foot-icons svg {
+    width: 24px; /* SVG ikonlarının boyutunu ayarlayın */
+    height: 24px;
+    fill: #fff; /* SVG içindeki ikon rengini beyaz yapın */
+}
+
 @media (max-width: 700px) {
     .gh-foot-menu .nav {
         font-size: 1.6rem;
+    }
+    .gh-foot-icons {
+        gap: 1rem; /* Mobilde ikonlar arasındaki boşluğu küçültün */
+    }
+    .gh-foot-icons a {
+        width: 35px;
+        height: 35px;
+    }
+    .gh-foot-icons svg {
+        width: 20px;
+        height: 20px;
     }
 }

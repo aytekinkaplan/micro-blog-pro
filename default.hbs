@@ -14,7 +14,24 @@
         <div class="gh-viewport">
             {{! Header will be displayed only if it's not the index page }}
             {{#is "index"}}
-                {{! Header will be hidden on the index page }}
+                <nav class="gh-head-inner gh-container">
+                    <div class="gh-head-actions">
+                        <div class="gh-head-actions-list">
+                            <!-- Navbar'da sadece RSS ikonları ve Dark Mode toggle -->
+                            <a href="/rss/" aria-label="RSS" class="gh-icon">
+                                {{> "icons/rss"}}
+                            </a>
+                            <!-- Karanlık Mod Düğmesi -->
+                            <button
+                                id="dark-mode-toggle"
+                                aria-label="Toggle dark mode"
+                                style="font-size: 1.5rem; cursor: pointer; background: none; border: none;"
+                            >
+                                🌙
+                            </button>
+                        </div>
+                    </div>
+                </nav>
             {{else}}
                 <header id="gh-head" class="gh-head">
                     <nav class="gh-head-inner gh-container">
@@ -58,6 +75,14 @@
                                         >Subscribe</a>
                                     {{/if}}
                                 {{/if}}
+                                <!-- Karanlık Mod Düğmesi -->
+                                <button
+                                    id="dark-mode-toggle"
+                                    aria-label="Toggle dark mode"
+                                    style="font-size: 1.5rem; cursor: pointer; background: none; border: none;"
+                                >
+                                    🌙
+                                </button>
                             </div>
                         </div>
                     </nav>
@@ -65,20 +90,6 @@
             {{/is}}
 
             <main class="gh-main">
-                <!-- Karanlık Mod Düğmesi Ana İçerikte Görünsün -->
-                <div
-                    class="dark-mode-toggle-wrapper"
-                    style="text-align: right; padding: 1rem;"
-                >
-                    <button
-                        id="dark-mode-toggle"
-                        aria-label="Toggle dark mode"
-                        style="font-size: 1.5rem; cursor: pointer; background: none; border: none;"
-                    >
-                        🌙
-                    </button>
-                </div>
-
                 {{{body}}}
                 {{! All content gets inserted here, index.hbs, post.hbs, etc }}
             </main>
@@ -89,23 +100,32 @@
                         {{navigation type="secondary"}}
                     </div>
                     <div class="gh-foot-meta">
-                        Published with
-                        <a
-                            href="https://ghost.org"
-                            target="_blank"
-                            rel="noopener"
-                        >Ghost</a>
+                        <!-- Facebook ve Twitter ikonları footer'a taşındı -->
+                        <div class="gh-foot-icons">
+                            <a href="https://facebook.com" aria-label="Facebook" class="gh-icon">
+                                {{> "icons/facebook"}}
+                            </a>
+                            <a href="https://twitter.com" aria-label="Twitter" class="gh-icon">
+                                {{> "icons/twitter"}}
+                            </a>
+                        </div>
+                        <div class="gh-foot-text">
+                            Published with
+                            <a
+                                href="https://ghost.org"
+                                target="_blank"
+                                rel="noopener"
+                            >Ghost</a>
+                        </div>
                     </div>
                 </div>
             </footer>
         </div>
 
-        {{! <foot> }}
         {{ghost_foot}}
         {{! Outputs important scripts - should always be included before closing body tag }}
 
         <!-- Ayrı JavaScript dosyasını dahil et -->
         <script src="{{asset 'js/dark-mode-toggle.js'}}"></script>
-
     </body>
 </html>

@@ -1,0 +1,106 @@
+/* Dark Mode Global Ayarlar */
+html.dark-mode {
+    background-color: #030507; /* Genel arka plan rengi */
+    color: #e0e0e0;
+}
+
+html.dark-mode body {
+    background-color: #030507; /* Body arka plan rengi */
+    color: #e0e0e0;
+}
+
+html.dark-mode a {
+    color: #bb86fc; /* Linklerin rengi */
+}
+
+html.dark-mode h1,
+html.dark-mode h2,
+html.dark-mode h3,
+html.dark-mode h4,
+html.dark-mode h5,
+html.dark-mode h6 {
+    color: #ffffff; /* Başlıkların rengi */
+}
+
+html.dark-mode .gh-viewport,
+html.dark-mode .gh-foot,
+html.dark-mode .gh-head,
+html.dark-mode .gh-container,
+html.dark-mode .gh-head-inner {
+    background-color: #030507; /* Dark mod için viewport, footer, header ve container arka planı */
+    color: #e0e0e0;
+}
+
+html.dark-mode .gh-micro-card {
+    background-color: #16191d; /* Mini blog kartlarının arka planı */
+    border-color: #16191d; /* Mini blog kartlarının kenar rengi */
+    color: #e0e0e0;
+}
+
+html.dark-mode .gh-micro-card a {
+    color: #bb86fc; /* Mini blog kartlarındaki linklerin rengi */
+}
+
+html.dark-mode .gh-micro-card .gh-micro-card-header,
+html.dark-mode .gh-micro-card .gh-micro-card-footer {
+    background-color: #16191d; /* Kart başlığı ve alt kısmı için arka plan rengi */
+    color: #e0e0e0;
+}
+
+html.dark-mode .gh-foot-menu a,
+html.dark-mode .gh-head-actions a {
+    color: #bb86fc; /* Navbar ve footer'daki linkler */
+}
+
+html.dark-mode input,
+html.dark-mode button,
+html.dark-mode select,
+html.dark-mode textarea {
+    background-color: #333; /* Form elemanları için arka plan rengi */
+    color: #fff; /* Form elemanları için yazı rengi */
+    border: 1px solid #555;
+}
+
+html.dark-mode input::placeholder,
+html.dark-mode textarea::placeholder {
+    color: #aaaaaa; /* Form elemanlarının placeholder rengi */
+}
+
+html.dark-mode .dark-mode-toggle-wrapper {
+    color: #e0e0e0; /* Dark mode toggle buton rengi */
+}
+
+html.dark-mode hr {
+    border-top-color: #444; /* Yatay çizgilerin rengi */
+    opacity: 0.4;
+}
+
+html.dark-mode mark {
+    background-color: #444444; /* Marked text için arka plan rengi */
+}
+
+html.dark-mode ::selection {
+    background: #575757; /* Seçili metin arka plan rengi */
+    color: #e0e0e0;
+}
+
+/* Dark Mode için İkon Renkleri */
+html.dark-mode .icon-button svg,
+html.dark-mode .dark-mode-toggle-wrapper svg {
+    fill: #bb86fc; /* Dark mode ikon rengi */
+}
+
+/* Dark Mode'da Navbar ve Dark Mode Toggle Butonu */
+html.dark-mode .dark-mode-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: #bb86fc;
+    transition: transform 0.2s ease;
+}
+
+html.dark-mode .dark-mode-toggle:hover {
+    transform: scale(1.2);
+    color: #ffffff;
+}

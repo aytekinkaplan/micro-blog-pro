@@ -1,25 +1,28 @@
 // dark-mode-toggle.js
 
-export default function darkModeToggle() {
+function darkModeToggle() {
     const toggleButton = document.getElementById("dark-mode-toggle");
-    const body = document.body;
+    const html = document.documentElement; // html elementini hedef al
 
     if (!toggleButton) return;
 
     // Kullanıcının tercih ettiği temayı uygula
     if (localStorage.getItem("theme") === "dark") {
-        body.classList.add("dark-mode");
+        html.classList.add("dark-mode");
     }
 
     // Toggle düğmesine tıklama olayı ekle
     toggleButton.addEventListener("click", () => {
-        body.classList.toggle("dark-mode");
+        html.classList.toggle("dark-mode");
 
         // Kullanıcının tercih ettiği temayı kaydet
-        if (body.classList.contains("dark-mode")) {
+        if (html.classList.contains("dark-mode")) {
             localStorage.setItem("theme", "dark");
         } else {
             localStorage.removeItem("theme");
         }
     });
 }
+
+// Fonksiyonu export et
+export default darkModeToggle;

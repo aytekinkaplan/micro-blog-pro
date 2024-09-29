@@ -17,3 +17,32 @@
     display: block;
     fill: #fff; /* SVG'nin iç rengi */
 }
+/* İkonlar için CSS */
+.gh-head-icons {
+    display: flex;
+    gap: 10px;
+    margin-left: auto; /* Sağ tarafa yerleştirir */
+    align-items: center;
+}
+
+.gh-head-icons a {
+    display: inline-flex;
+    padding: 5px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
+
+.gh-head-icons a:hover {
+    background-color: #f0f0f0;
+}
+
+.gh-head-icons svg {
+    width: 24px;
+    height: 24px;
+    fill: #333; /* SVG'nin iç rengi */
+    transition: fill 0.3s ease;
+}
+
+.gh-head-icons a:hover svg {
+    fill: #007acc; /* Hover'da ikon rengi */
+}
