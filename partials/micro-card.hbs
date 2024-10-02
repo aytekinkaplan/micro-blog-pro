@@ -1,4 +1,5 @@
 <article class="PostItem blogpost h-entry gh-micro-card" data-index="{{@index}}" data-slug="{{slug}}" tabindex="0" data-tags="{{primary_tag.slug}}">
+
     {{! Profil Görseli }}
     {{#if primary_author.profile_image}}
         <img src="{{primary_author.profile_image}}" alt="{{primary_author.name}}" class="Pic Persona gh-micro-card-author-image" loading="lazy" decoding="async" />
@@ -6,7 +7,7 @@
         {{> "icons/avatar"}} {{! Varsayılan avatar SVG'sini buraya ekliyoruz }}
     {{/if}}
 
-    {{! Başlık Bilgisi }}
+    {{! Başlık Bilgisi - Sadece yazar ismi ve tarih görünecek }}
     <header class="inline-wrap gh-micro-card-header">
         <a href="{{primary_author.url}}" class="gh-micro-card-author-link truncate">
             <span class="username p-author">{{primary_author.name}}</span>
@@ -15,30 +16,10 @@
         <time class="dt-published" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
     </header>
 
-    {{! Etiketler }}
-    {{#if primary_tag}}
-        <div class="Tags inline-wrap">
-            <a href="/tag/{{primary_tag.slug}}" class="Tag" data-topic="{{primary_tag.slug}}">#{{primary_tag.name}}</a>
-        </div>
-    {{/if}}
-
-    {{! Post Başlığı - Eğer başlık yoksa gösterme }}
-    {{#if title}}
-        <h2 class="p-name gh-micro-card-title">
-            <a href="{{url}}">{{title}}</a>
-        </h2>
-    {{/if}}
-
-    {{! Gönderinin İçeriği - Eğer içerik veya excerpt varsa göster }}
-    {{#if custom_excerpt}}
-        <section class="e-content">
-            <p>{{custom_excerpt}}</p>
-        </section>
-    {{else if content words="30"}}
-        <section class="e-content">
-            <p>{{content words="30"}}</p> {{! 30 kelimelik excerpt (özet) gösterilecek }}
-        </section>
-    {{/if}}
+    {{! Gönderinin İçeriği - Tüm içerik görünür, başlık yok }}
+    <section class="e-content">
+        <p>{{content}}</p>
+    </section>
 
     {{! Ana Görsel Varsa Göster }}
     {{#if feature_image}}
@@ -47,16 +28,5 @@
         </figure>
     {{/if}}
 
-    {{! Footer Bilgisi }}
-    <footer class="gh-micro-card-footer">
-        <a href="{{url}}" class="u-url">Full article</a>
-        <a href="javascript: navigator.clipboard.writeText(window.location.href + '{{slug}}');Toast('Link <b>copied!</b>')" class="icon-button share-button">
-            <div class="sr-only">Share a direct link to this post</div>
-            <svg aria-hidden="true" class="filled-icon" width="24" height="24" viewBox="0 0 24 24"><use href="#icon.share"></use></svg>
-        </a>
-        <a href="#" class="icon-button like-button">
-            <div class="sr-only">Like this post</div>
-            <svg aria-hidden="true" class="filled-icon" width="24" height="24"><use href="#icon.heart"></use></svg>
-        </a>
-    </footer>
+    {{! Full Article linki olmadan içerik görüntülenir }}
 </article>
