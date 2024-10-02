@@ -8,20 +8,20 @@
         <title>{{meta_title}}</title>
 
         {{ghost_head}}
-        {{! Outputs important meta data and settings, should always be in <head> }}
+        {{!-- Outputs important meta data and settings, should always be in <head> --}}
     </head>
     <body class="{{body_class}}">
         <div class="gh-viewport">
-            {{! Header will be displayed only if it's not the index page }}
+            {{!-- Header will be displayed only if it's not the index page --}}
             {{#is "index"}}
                 <nav class="gh-head-inner gh-container">
                     <div class="gh-head-actions">
                         <div class="gh-head-actions-list gh-head-icons" style="margin-left:auto;">
-                            <!-- Navbar'da sadece RSS ikonları ve Dark Mode toggle -->
+                            {{!-- Navbar'da sadece RSS ikonları ve Dark Mode toggle --}}
                             <a href="/rss/" aria-label="RSS" class="gh-icon">
                                 {{> "icons/rss"}}
                             </a>
-                            <!-- Karanlık Mod Düğmesi -->
+                            {{!-- Karanlık Mod Düğmesi --}}
                             <button
                                 id="dark-mode-toggle"
                                 aria-label="Toggle dark mode"
@@ -75,7 +75,7 @@
                                         >Subscribe</a>
                                     {{/if}}
                                 {{/if}}
-                                <!-- Karanlık Mod Düğmesi -->
+                                {{!-- Karanlık Mod Düğmesi --}}
                                 <button
                                     id="dark-mode-toggle"
                                     aria-label="Toggle dark mode"
@@ -91,7 +91,7 @@
 
             <main class="gh-main">
                 {{{body}}}
-                {{! All content gets inserted here, index.hbs, post.hbs, etc }}
+                {{!-- All content gets inserted here, index.hbs, post.hbs, etc --}}
             </main>
 
             <footer class="gh-foot">
@@ -100,7 +100,7 @@
                         {{navigation type="secondary"}}
                     </div>
                     <div class="gh-foot-meta">
-                        <!-- Facebook ve Twitter ikonları footer'a taşındı -->
+                        {{!-- Facebook ve Twitter ikonları footer'a taşındı --}}
                         <div class="gh-foot-icons">
                             <a href="https://facebook.com" aria-label="Facebook" class="gh-icon">
                                 {{> "icons/facebook"}}
@@ -123,9 +123,9 @@
         </div>
 
         {{ghost_foot}}
-        {{! Outputs important scripts - should always be included before closing body tag }}
+        {{!-- Outputs important scripts - should always be included before closing body tag --}}
 
-        <!-- Ayrı JavaScript dosyasını dahil et -->
+        {{!-- Ayrı JavaScript dosyasını dahil et --}}
         <script src="{{asset 'js/dark-mode-toggle.js'}}"></script>
     </body>
 </html>

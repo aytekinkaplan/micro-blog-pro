@@ -7,11 +7,11 @@
                 {{#foreach posts}}
                     {{#has tag="#micro"}}
                         <li>
-                            {{> "micro-card"}} <!-- Micro card içeriklerini gösterir -->
+                            {{> "micro-card"}} {{!-- Micro card içeriklerini gösterir --}}
                         </li>
                     {{else}}
                         <li>
-                            {{> "card"}} <!-- Normal card içeriklerini gösterir -->
+                            {{> "card"}} {{!-- Normal card içeriklerini gösterir --}}
                         </li>
                     {{/has}}
                 {{/foreach}}
