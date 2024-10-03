@@ -16,9 +16,14 @@
         <time class="dt-published" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
     </header>
 
-    {{! Gönderinin İçeriği - Tüm içerik görünür, başlık yok }}
+    {{! Gönderinin İçeriği - Ana sayfada sadece excerpt görünür, tüm post linklenir }}
     <section class="e-content">
-        <p>{{content}}</p>
+        {{#if custom_excerpt}}
+            <p>{{custom_excerpt}}</p>
+        {{else}}
+            <p>{{content words="30"}}</p> {{!-- Yalnızca 30 kelimelik özet gösterilecek --}}
+        {{/if}}
+        <a href="{{url}}" class="u-url">Read more</a> {{!-- Link, tıklanınca tüm postu gösterir --}}
     </section>
 
     {{! Ana Görsel Varsa Göster }}
@@ -28,5 +33,4 @@
         </figure>
     {{/if}}
 
-    {{! Full Article linki olmadan içerik görüntülenir }}
 </article>
