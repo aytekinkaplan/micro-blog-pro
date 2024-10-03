@@ -1,5 +1,4 @@
-<article class="PostItem blogpost h-entry gh-micro-card" data-index="{{@index}}" data-slug="{{slug}}" tabindex="0" data-tags="{{primary_tag.slug}}">
-
+<a href="{{url}}" class="PostItem blogpost h-entry gh-micro-card {{#if @site.dark_mode}}dark-mode{{/if}}" data-index="{{@index}}" data-slug="{{slug}}" tabindex="0" data-tags="{{primary_tag.slug}}">
     {{! Profil Görseli }}
     {{#if primary_author.profile_image}}
         <img src="{{primary_author.profile_image}}" alt="{{primary_author.name}}" class="Pic Persona gh-micro-card-author-image" loading="lazy" decoding="async" />
@@ -9,10 +8,8 @@
 
     {{! Başlık Bilgisi - Sadece yazar ismi ve tarih görünecek }}
     <header class="inline-wrap gh-micro-card-header">
-        <a href="{{primary_author.url}}" class="gh-micro-card-author-link truncate">
-            <span class="username p-author">{{primary_author.name}}</span>
-            <span>@{{primary_author.slug}}</span>
-        </a>
+        <span class="username p-author">{{primary_author.name}}</span>
+        <span>@{{primary_author.slug}}</span>
         <time class="dt-published" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
     </header>
 
@@ -23,7 +20,7 @@
         {{else}}
             <p>{{content words="30"}}</p> {{!-- Yalnızca 30 kelimelik özet gösterilecek --}}
         {{/if}}
-        <a href="{{url}}" class="u-url read-more-link">Read more</a> {{!-- Link, tıklanınca tüm postu gösterir --}}
+        <span class="u-url read-more-link">Read more</span> {{!-- Kartın tamamı tıklanabilir --}}
     </section>
 
     {{! Ana Görsel Varsa Göster }}
@@ -32,5 +29,4 @@
             <img loading="lazy" src="{{feature_image}}" alt="Micro Image" class="Pic" decoding="async" />
         </figure>
     {{/if}}
-
-</article>
+</a>

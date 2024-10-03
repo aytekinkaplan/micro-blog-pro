@@ -1,6 +1,6 @@
 /* Micro Card List Styling */
 .gh-micro-list {
-    width: 700px; /* Biraz genişletilmiş kart alanı */
+    width: 700px; /* Kart genişliği */
     margin: 0 auto;
     display: grid;
     grid-template-columns: 1fr;
@@ -9,30 +9,28 @@
 }
 
 .gh-micro-list li {
-    margin-bottom: 2.5rem; /* Kartlar arası daha fazla boşluk */
+    margin-bottom: 2.5rem; /* Kartlar arasında geniş boşluk */
 }
 
 /* Micro Card Styling */
 .gh-micro-card {
-    padding: 2rem;
+    padding: 2.5rem;
     margin-bottom: 1.5rem;
-    border: 1px solid #e0e0e0; /* Daha açık kenar rengi */
-    border-radius: 20px; /* Daha büyük köşe yuvarlaması */
-    background: #fafafa; /* Yumuşak bir arka plan rengi */
+    border: 1px solid #ddd; /* Daha yumuşak kenar rengi */
+    border-radius: 20px; /* Köşelerin yuvarlatılması */
+    background: #f9f9f9; /* Hafif arka plan rengi */
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); /* Hafif ve geniş gölge */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08); /* Yumuşak gölge */
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     max-width: 100%;
 }
 
 .gh-micro-card:hover {
-    transform: translateY(
-        -6px
-    ); /* Hover sırasında daha hafif bir yukarı hareket */
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12); /* Daha geniş hover gölgesi */
-    border-color: #00aaff; /* Daha parlak bir mavi renk */
+    transform: translateY(-5px); /* Hover'da hafif yükselme */
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1); /* Hover'da daha yoğun gölge */
+    border-color: #1da1f2; /* Mavi vurgu rengi */
 }
 
 /* Header Section: Profile image, author name, and date */
@@ -43,54 +41,54 @@
 }
 
 .gh-micro-card-author-image {
-    width: 60px; /* Biraz daha büyük profil resmi */
+    width: 60px; /* Daha büyük profil resmi */
     height: 60px;
     border-radius: 50%;
     object-fit: cover;
-    border: 2px solid #e0e0e0; /* Daha açık kenar rengi */
+    border: 2px solid #ddd;
     transition: border-color 0.3s ease;
 }
 
 .gh-micro-card-author-image:hover {
-    border-color: #00aaff; /* Hover'da parlak mavi */
+    border-color: #1da1f2; /* Hover'da mavi vurgu */
 }
 
 .gh-micro-card-author-link {
     font-weight: bold;
-    font-size: 1.2rem; /* Biraz daha büyük yazar ismi */
-    color: #333333; /* Koyu gri */
+    font-size: 1.2rem;
+    color: #333333;
 }
 
 .gh-micro-card-header time {
     font-size: 0.9rem;
-    color: #999999; /* Daha hafif tarih rengi */
+    color: #888; /* Tarih rengi */
 }
 
 /* Content Section */
 .e-content {
-    font-size: 1.4rem; /* Yumuşak bir boyut */
-    color: #666666; /* Daha koyu metin rengi */
-    line-height: 1.75;
+    font-size: 1.6rem; /* Daha büyük metin boyutu */
+    color: #555555;
+    line-height: 1.8;
     transition: color 0.3s ease;
 }
 
 .gh-micro-card:hover .e-content {
-    color: #333333; /* Hover'da koyulaşan metin rengi */
+    color: #333; /* Hover'da daha koyu metin rengi */
 }
 
 /* Read More Link */
 .read-more-link {
     text-decoration: none;
     font-weight: bold;
-    font-size: 1.3rem;
-    color: #0077cc; /* Canlı mavi */
+    font-size: 1.4rem;
+    color: #1da1f2;
     transition: color 0.3s ease, text-decoration 0.3s ease;
     position: relative;
 }
 
 .read-more-link:hover {
-    color: #005fa3; /* Hover'da daha koyu mavi */
-    text-decoration: underline; /* Hover sırasında underline eklenir */
+    color: #0b8ac7; /* Hover'da daha koyu mavi */
+    text-decoration: underline;
 }
 
 /* Image Section */
@@ -99,17 +97,17 @@
     display: flex;
     justify-content: center;
     overflow: hidden;
-    border-radius: 15px; /* Hafif yuvarlanmış kenarlar */
+    border-radius: 15px;
 }
 
 .gh-micro-card-image img {
     width: 100%;
     height: auto;
-    transition: transform 0.4s ease; /* Daha yumuşak dönüşüm */
+    transition: transform 0.4s ease;
 }
 
 .gh-micro-card:hover .gh-micro-card-image img {
-    transform: scale(1.08); /* Hover'da biraz daha fazla büyüme */
+    transform: scale(1.1); /* Hover'da daha büyük görüntü */
 }
 
 /* Footer Section */
@@ -117,40 +115,40 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-top: 1px solid #e0e0e0;
+    border-top: 1px solid #ddd;
     padding-top: 1rem;
     font-size: 1rem;
-    color: #888888; /* Daha hafif footer metni */
+    color: #888888;
 }
 
 /* Tags */
 .gh-micro-card-tag {
-    background-color: #e6f7ff; /* Hafif mavi arka plan */
-    padding: 5px 10px;
+    background-color: #e6f7ff;
+    padding: 6px 12px;
     border-radius: 5px;
-    font-size: 0.9rem;
+    font-size: 1rem;
     text-decoration: none;
-    color: #007acc; /* Mavi metin */
+    color: #1da1f2;
     transition: background-color 0.3s ease;
 }
 
 .gh-micro-card-tag:hover {
-    background-color: #d4efff; /* Hover'da daha açık mavi */
+    background-color: #d4efff;
 }
 
 /* Icon Button */
 .icon-button {
     display: flex;
     align-items: center;
-    color: #0077cc; /* Mavi ikon rengi */
+    color: #1da1f2;
     transition: color 0.3s ease;
 }
 
 .icon-button:hover {
-    color: #005fa3; /* Hover'da koyu mavi */
+    color: #0b8ac7; /* Hover'da daha koyu mavi */
 }
 
 .icon-button svg {
-    height: 18px;
-    width: 18px;
+    height: 20px;
+    width: 20px;
 }

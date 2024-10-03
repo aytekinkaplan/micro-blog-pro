@@ -6,11 +6,11 @@
             <ul class="gh-micro-list">
                 {{#foreach posts}}
                     {{#has tag="#micro"}}
-                        <li>
+                        <li class="{{#if @site.dark_mode}}dark-mode{{/if}}">
                             {{> "micro-card"}} {{!-- Micro card içeriklerini gösterir --}}
                         </li>
                     {{else}}
-                        <li>
+                        <li class="{{#if @site.dark_mode}}dark-mode{{/if}}">
                             {{> "card"}} {{!-- Normal card içeriklerini gösterir --}}
                         </li>
                     {{/has}}
