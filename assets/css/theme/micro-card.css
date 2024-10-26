@@ -69,11 +69,13 @@
     font-size: 1.6rem; /* Daha büyük metin boyutu */
     color: #555555;
     line-height: 1.8;
-    transition: color 0.3s ease;
+    max-height: 9em; /* Başlangıçta içerik yüksekliğini sınırlıyoruz */
+    overflow: hidden;
+    transition: max-height 0.3s ease; /* Açılıp kapanma animasyonu */
 }
 
-.gh-micro-card:hover .e-content {
-    color: #333; /* Hover'da daha koyu metin rengi */
+.e-content.expanded {
+    max-height: none; /* Genişletildiğinde tüm içeriği göster */
 }
 
 /* Read More Link */
@@ -82,6 +84,7 @@
     font-weight: bold;
     font-size: 1.4rem;
     color: #1da1f2;
+    cursor: pointer;
     transition: color 0.3s ease, text-decoration 0.3s ease;
     position: relative;
 }
