@@ -18,9 +18,9 @@
         "pretest": "npm run build"
     },
     "author": {
-        "name": "Ghost Foundation",
-        "email": "hello@ghost.org",
-        "url": "https://ghost.org"
+        "name": "Kaplan",
+        "email": "ytknkpln@gmail.com",
+        "url": "https://kaplan.io"
     },
     "gpm": {
         "type": "theme",
