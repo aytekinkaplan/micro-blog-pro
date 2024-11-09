@@ -1,32 +1,34 @@
-<a href="{{url}}" class="PostItem blogpost h-entry gh-micro-card {{#if @site.dark_mode}}dark-mode{{/if}}" data-index="{{@index}}" data-slug="{{slug}}" tabindex="0" data-tags="{{primary_tag.slug}}">
+<a href="{{url}}" class="PostItem tweet h-entry gh-micro-card {{#if @site.dark_mode}}dark-mode{{/if}}" data-index="{{@index}}" data-slug="{{slug}}" tabindex="0" data-tags="{{primary_tag.slug}}">
+    
     {{! Profil Görseli }}
-    {{#if primary_author.profile_image}}
-        <img src="{{primary_author.profile_image}}" alt="{{primary_author.name}}" class="Pic Persona gh-micro-card-author-image" loading="lazy" decoding="async" />
-    {{else}}
-        {{> "icons/avatar"}} {{! Varsayılan avatar SVG'sini buraya ekliyoruz }}
-    {{/if}}
-
-    {{! Başlık Bilgisi - Sadece yazar ismi ve tarih görünecek }}
-    <header class="inline-wrap gh-micro-card-header">
-        <span class="username p-author">{{primary_author.name}}</span>
-        <span>@{{primary_author.slug}}</span>
-        <time class="dt-published" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
-    </header>
-
-    {{! Gönderinin İçeriği - Ana sayfada sadece excerpt görünür, tüm post linklenir }}
-    <section class="e-content">
-        {{#if custom_excerpt}}
-            <p>{{custom_excerpt}}</p>
+    <div class="tweet-header">
+        {{#if primary_author.profile_image}}
+            <img src="{{primary_author.profile_image}}" alt="{{primary_author.name}}" class="Pic Persona tweet-author-image" loading="lazy" decoding="async" />
         {{else}}
-            <p>{{content words="30"}}</p> {{!-- Yalnızca 30 kelimelik özet gösterilecek --}}
+            {{> "icons/avatar"}} {{! Varsayılan avatar SVG'sini buraya ekliyoruz }}
         {{/if}}
-        <span class="u-url read-more-link">Read more</span> {{!-- Kartın tamamı tıklanabilir --}}
-    </section>
 
-    {{! Ana Görsel Varsa Göster }}
+        {{! Yazar Bilgisi ve Tarih - Minimal bir görünüm }}
+        <div class="tweet-author-info">
+            <span class="username p-author">{{primary_author.name}}</span>
+            <span class="user-handle">@{{primary_author.slug}}</span>
+            <time class="dt-published" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+        </div>
+    </div>
+
+    {{! Gönderinin İçeriği - Kısa bir içerik ya da görsel }}
+    <div class="tweet-content">
+        {{#if custom_excerpt}}
+            <p class="tweet-text">{{custom_excerpt}}</p>
+        {{else}}
+            <p class="tweet-text">{{content words="20"}}</p> {{!-- Daha kısa bir özet için 20 kelime sınırlaması --}}
+        {{/if}}
+    </div>
+
+    {{! Gönderiye Eklenmiş Görsel Varsa Göster }}
     {{#if feature_image}}
-        <figure class="gh-micro-card-image">
-            <img loading="lazy" src="{{feature_image}}" alt="Micro Image" class="Pic" decoding="async" />
-        </figure>
+        <div class="tweet-image">
+            <img loading="lazy" src="{{feature_image}}" alt="Tweet Image" class="tweet-img" decoding="async" />
+        </div>
     {{/if}}
 </a>
