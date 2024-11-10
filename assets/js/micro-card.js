@@ -1,17 +1,32 @@
-export default function microCard() {
-    document.querySelectorAll(".read-more-link").forEach((button) => {
-        button.addEventListener("click", function (event) {
-            event.preventDefault();
-            const postItem = button.closest(".PostItem");
-            const contentSection = postItem.querySelector(".e-content");
+// Micro Card Expand/Collapse Functionality
+document.addEventListener("DOMContentLoaded", () => {
+    // Initialize read more/less functionality on all cards
+    const initMicroCards = () => {
+        const readMoreLinks = document.querySelectorAll(".read-more-link");
 
-            if (contentSection.classList.contains("expanded")) {
-                contentSection.classList.remove("expanded");
-                button.textContent = "Read more";
-            } else {
-                contentSection.classList.add("expanded");
-                button.textContent = "Show less";
-            }
+        readMoreLinks.forEach((link) => {
+            link.addEventListener("click", toggleContent);
         });
-    });
-}
+    };
+
+    // Function to toggle content expansion/collapse
+    const toggleContent = (event) => {
+        event.preventDefault();
+        const button = event.currentTarget;
+        const postItem = button.closest(".gh-micro-card");
+        const contentSection = postItem.querySelector(".tweet-content");
+
+        if (contentSection.style.maxHeight) {
+            // Eğer içerik genişletilmişse eski durumuna getir
+            contentSection.style.maxHeight = null;
+            button.textContent = "Read more";
+        } else {
+            // İçeriği genişletmek için tüm yüksekliği al
+            contentSection.style.maxHeight = contentSection.scrollHeight + "px";
+            button.textContent = "Show less";
+        }
+    };
+
+    // Initialize the micro card functionality on page load
+    initMicroCards();
+});

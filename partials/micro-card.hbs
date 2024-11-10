@@ -1,34 +1,78 @@
-<a href="{{url}}" class="PostItem tweet h-entry gh-micro-card {{#if @site.dark_mode}}dark-mode{{/if}}" data-index="{{@index}}" data-slug="{{slug}}" tabindex="0" data-tags="{{primary_tag.slug}}">
+<a href="{{url}}" class="PostItem gh-micro-card {{#if @site.dark_mode}}dark-mode{{/if}}" data-index="{{@index}}" data-slug="{{slug}}" tabindex="0" data-tags="{{primary_tag.slug}}">
     
-    {{! Profil Görseli }}
-    <div class="tweet-header">
-        {{#if primary_author.profile_image}}
-            <img src="{{primary_author.profile_image}}" alt="{{primary_author.name}}" class="Pic Persona tweet-author-image" loading="lazy" decoding="async" />
-        {{else}}
-            {{> "icons/avatar"}} {{! Varsayılan avatar SVG'sini buraya ekliyoruz }}
-        {{/if}}
+    <!-- Profil ve Yazar Bilgileri -->
+    <div class="tweet-header display-flex">
+        
+        <!-- Profil Resimleri -->
+        <div class="tweet-author-images display-flex">
+            <div class="tweet-author-image-container">
+                {{#if primary_author.profile_image}}
+                    <img src="{{primary_author.profile_image}}" alt="{{primary_author.name}}" class="tweet-author-image" loading="lazy" decoding="async" />
+                {{else}}
+                    {{> "icons/avatar"}}
+                {{/if}}
+            </div>
+            {{#if secondary_profile_image}}
+                <div class="tweet-author-image-container">
+                    <img src="{{secondary_profile_image}}" alt="Secondary Profile Image" class="tweet-author-image" loading="lazy" decoding="async" />
+                </div>
+            {{/if}}
+        </div>
 
-        {{! Yazar Bilgisi ve Tarih - Minimal bir görünüm }}
+        <!-- Yazar Bilgileri -->
         <div class="tweet-author-info">
-            <span class="username p-author">{{primary_author.name}}</span>
-            <span class="user-handle">@{{primary_author.slug}}</span>
+            <span class="username">{{primary_author.name}}</span>
+            <span class="user-handle">{{primary_author.bio}} • 3rd+</span> <!-- İş unvanı ve bağlantı seviyesi -->
             <time class="dt-published" datetime="{{date format="YYYY-MM-DD"}}">{{date format="D MMM YYYY"}}</time>
+        </div>
+        
+        <!-- Menü İkonu (Üç Nokta Menüsü) -->
+        <div class="tweet-menu">
+            <button class="menu-button" aria-label="Menu">
+                <span>•••</span>
+            </button>
         </div>
     </div>
 
-    {{! Gönderinin İçeriği - Kısa bir içerik ya da görsel }}
+    <!-- Gönderinin İçeriği -->
     <div class="tweet-content">
         {{#if custom_excerpt}}
             <p class="tweet-text">{{custom_excerpt}}</p>
         {{else}}
-            <p class="tweet-text">{{content words="20"}}</p> {{!-- Daha kısa bir özet için 20 kelime sınırlaması --}}
+            <p class="tweet-text">{{content words="20"}}</p>
         {{/if}}
+        
+        <!-- Read more / Show less link -->
+        <span class="read-more-link" onclick="toggleContent(this)">Read more</span>
     </div>
 
-    {{! Gönderiye Eklenmiş Görsel Varsa Göster }}
+    <!-- Gönderiye Eklenmiş Görsel Varsa Göster -->
     {{#if feature_image}}
         <div class="tweet-image">
-            <img loading="lazy" src="{{feature_image}}" alt="Tweet Image" class="tweet-img" decoding="async" />
+            <img src="{{feature_image}}" alt="Tweet Image" class="tweet-img" loading="lazy" decoding="async" />
         </div>
     {{/if}}
+
+    <!-- Web Sitesi Linki (Ziyaret Et Butonu) -->
+    {{#if website_link}}
+        <a href="{{website_link}}" target="_blank" class="website-link-button">Visit my website</a>
+    {{/if}}
+    
+    <!-- Beğeni, Yorum ve Paylaşım İkonları -->
+    <div class="tweet-footer">
+        <div class="tweet-action">
+            <button class="icon-button" aria-label="Comment">
+                <svg>...</svg>
+                <span>12</span> <!-- Yorum Sayısı -->
+            </button>
+            <button class="icon-button" aria-label="Share">
+                <svg>...</svg>
+                <span>34</span> <!-- Paylaşım Sayısı -->
+            </button>
+            <button class="icon-button" aria-label="Like">
+                <svg>...</svg>
+                <span>56</span> <!-- Beğeni Sayısı -->
+            </button>
+        </div>
+    </div>
 </a>
